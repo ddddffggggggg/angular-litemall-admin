@@ -1,0 +1,17 @@
+.login-container {
+  min-height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[nz-form] {
+  width: 600px;
+}
+
+button {
+  margin-left: 8px;
+}

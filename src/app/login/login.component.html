@@ -1,0 +1,31 @@
+
+<div class="login-container">
+  <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm(validateForm.value)">
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>管理员账户</nz-form-label>
+      <nz-form-control [nzSpan]="12" nzHasFeedback nzValidatingTip="Validating..." [nzErrorTip]="userErrorTpl">
+        <input nz-input [(ngModel)]="username" formControlName="userName" placeholder="管理员账户" />
+        <ng-template #userErrorTpl let-control>
+          <ng-container *ngIf="control.hasError('required')">
+            管理员账户不允许为空！
+          </ng-container>
+          <ng-container *ngIf="control.hasError('duplicated')">
+            用户名是多于的！
+          </ng-container>
+        </ng-template>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>管理员密码</nz-form-label>
+      <nz-form-control [nzSpan]="12" nzHasFeedback nzErrorTip="管理员密码不允许为空!">
+        <input nz-input [(ngModel)]="password" type="password" formControlName="password"  placeholder="管理员密码"  />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control [nzOffset]="7" [nzSpan]="12">
+        <button nz-button nzType="primary" [disabled]="!validateForm.valid">登录</button>
+        <button nz-button (click)="resetForm($event)">重置</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</div>
