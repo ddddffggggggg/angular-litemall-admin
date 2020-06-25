@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormsModule, Validators, FormGroup, FormControl, ValidationErrors } from '@angular/forms';
 import { Observable, Observer } from 'rxjs/index';
+
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,7 +14,7 @@ export class LoginComponent implements OnInit {
   public username:string = 'admin123';
   public password:string = 'admin123';
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private cookieService: CookieService) {
     this.validateForm = this.fb.group({
       userName: ['', [Validators.required]],
       password: ['', [Validators.required]]
