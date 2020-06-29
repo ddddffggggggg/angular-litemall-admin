@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormsModule, Validators, FormGroup, FormControl, ValidationErrors } from '@angular/forms';
 import { Observable, Observer } from 'rxjs/index';
-
+import { LoginService } from './login.service';
 import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-login',
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   public username:string = 'admin123';
   public password:string = 'admin123';
 
-  constructor(private fb: FormBuilder, private cookieService: CookieService) {
+  constructor(private fb: FormBuilder, private cookieService: CookieService, private loginService: LoginService) {
     this.validateForm = this.fb.group({
       userName: ['', [Validators.required]],
       password: ['', [Validators.required]]
@@ -28,8 +28,12 @@ export class LoginComponent implements OnInit {
       this.validateForm.controls[key].markAsDirty();
       this.validateForm.controls[key].updateValueAndValidity();
     }
-    console.log(this.validateForm.controls);
     console.log(value);
+
+    this.loginService.login(this.username, this.password)
+      .subscribe( (result) => {
+        console.log(result);
+      });
   }
 
   resetForm(e: MouseEvent): void {
@@ -39,6 +43,9 @@ export class LoginComponent implements OnInit {
       this.validateForm.controls[key].markAsPristine();
       this.validateForm.controls[key].updateValueAndValidity();
     }
+  }
+  loginSuccess(value) {
+    console.log(value);
   }
 
 
