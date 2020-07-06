@@ -49,10 +49,12 @@ export class LoginComponent implements OnInit {
     console.log(result.data);
     const data = result.data;
     const token = data.token;
-    const username = data.username;
-    console.log(token);
+    const username = data.adminInfo.nickName;
+    const userInfo = data.adminInfo;
+    console.log(username);
     this.cookieService.set('token', token);
     this.cookieService.set('username', username);
+    this.cookieService.set('userinfo', userInfo);
     this.router.navigate(['/']);
   }
 

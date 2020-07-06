@@ -14,12 +14,15 @@ export class AuthGuard implements CanActivate {
     let isLogin: boolean;
     // 判断用户是否登录
     const token = this.cookieService.get('token');
-    if (!token) {
+    const username = this.cookieService.get('username');
+    if (!token || username.length === 0 || !username) {
       isLogin = false;
       // 未登录跳转到登录界面
       this.router.navigateByUrl('/login');
     } else {
       isLogin = true;
+      console.log(username);
+      console.log(username.length);
     }
     return isLogin;
   }
