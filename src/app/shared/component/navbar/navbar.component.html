@@ -1,1 +1,29 @@
-<p>navbar works!</p>
+<div class="navbar-container">
+  <nz-breadcrumb>
+    <nz-breadcrumb-item>
+      <a [routerLink]="['../../']">Home</a>
+    </nz-breadcrumb-item>
+    <nz-breadcrumb-item>
+      Breadcrumb
+    </nz-breadcrumb-item>
+  </nz-breadcrumb>
+
+  <nz-button-group>
+    <button nz-button (click)="log()">DropDown</button>
+    <button nz-button nz-dropdown [nzDropdownMenu]="menu2" nzPlacement="bottomRight">
+      <i nz-icon nzType="user"></i>
+    </button>
+  </nz-button-group>
+
+
+  <nz-dropdown-menu #menu2="nzDropdownMenu">
+    <ul nz-menu>
+      <li nz-menu-item>menu2 1st menu item</li>
+      <li nz-menu-item>menu2 2nd menu item</li>
+      <li nz-menu-item>menu2 3rd menu item</li>
+    </ul>
+  </nz-dropdown-menu>
+
+</div>
+
+

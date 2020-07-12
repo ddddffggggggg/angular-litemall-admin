@@ -12,4 +12,8 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  log(): void {
+    console.log('click dropdown button');
+  }
+
 }

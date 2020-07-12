@@ -2,4 +2,13 @@
   position: relative;
   height: 100%;
   width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+.main-container{
+  width: 100%;
+  min-height: 100%;
+  -webkit-transition: margin-left .28s;
+  transition: margin-left .28s;
+  position: relative;
 }
