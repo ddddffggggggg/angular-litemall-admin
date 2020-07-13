@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Observable, Observer } from 'rxjs/index';
 import { LoginService } from './login.service';
 import { CookieService } from 'ngx-cookie-service';
+import { UserService } from '../shared/service/user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,7 +16,11 @@ export class LoginComponent implements OnInit {
   public username:string = 'admin123';
   public password:string = 'admin123';
 
-  constructor(private fb: FormBuilder, private router: Router, private cookieService: CookieService, private loginService: LoginService) {
+  constructor(private fb: FormBuilder,
+              private router: Router,
+              private cookieService: CookieService,
+              private loginService: LoginService,
+              private userservice: UserService) {
     this.validateForm = this.fb.group({
       userName: ['', [Validators.required]],
       password: ['', [Validators.required]]
@@ -50,11 +55,13 @@ export class LoginComponent implements OnInit {
     const data = result.data;
     const token = data.token;
     const username = data.adminInfo.nickName;
+    const avatar = data.adminInfo.avatar;
     const userInfo = data.adminInfo;
     console.log(username);
     this.cookieService.set('token', token);
     this.cookieService.set('username', username);
     this.cookieService.set('userinfo', userInfo);
+    this.cookieService.set('useravatar', avatar);
     this.router.navigate(['/']);
   }
 

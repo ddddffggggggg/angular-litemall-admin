@@ -3,3 +3,14 @@
   align-items: center;
   justify-content: space-between;
 }
+.ant-breadcrumb{
+  padding: 10px;
+}
+.avatar-container{
+  padding: 10px;
+}
+.user-avatar{
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
