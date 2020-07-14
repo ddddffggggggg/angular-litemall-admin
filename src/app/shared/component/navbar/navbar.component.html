@@ -1,7 +1,7 @@
 <div class="navbar-container">
   <nz-breadcrumb>
     <nz-breadcrumb-item>
-      <a [routerLink]="['../../']">Home</a>
+      <a [routerLink]="['/']">Home</a>
     </nz-breadcrumb-item>
     <nz-breadcrumb-item>
       Breadcrumb
@@ -9,12 +9,7 @@
   </nz-breadcrumb>
 
   <div class="avatar-container">
-<!--    <button nz-button (click)="log()">{{name}}</button>-->
-    <img class="user-avatar" nz-dropdown [nzDropdownMenu]="menu2" nzPlacement="bottomRight" src="{{avatar}}" alt="" (click)="log()">
-<!--    <button nz-button nz-dropdown [nzDropdownMenu]="menu2" nzPlacement="bottomRight">-->
-<!--      <i nz-icon nzType="user"></i>-->
-<!--      <img style="width:40px;height:40px;" src="{{avatar}}" alt="">-->
-<!--    </button>-->
+    <img class="user-avatar" nz-dropdown [nzDropdownMenu]="menu2" nzPlacement="bottomRight" src="avatar" alt="" (click)="log()">
   </div>
 
 

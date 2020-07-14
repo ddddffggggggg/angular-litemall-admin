@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
 import { AuthGuard } from '../shared/guard/auth.guard';
+//component: LayoutComponent,
 const routes: Routes = [
-  { path: '', component: LayoutComponent,  canActivate: [AuthGuard]
-    // children: [
-    //   { path: '', loadChildren: './home/home.module#HomeModule' }
-    // ]
+  { path: '', redirectTo: '/layout/index' },
+  { path: 'layout', component: LayoutComponent,  canActivate: [AuthGuard],
+    children: [
+      { path: 'index', loadChildren: () => import('./index/index.module').then(m => m.IndexModule) }
+    ]
   }
 ];
 

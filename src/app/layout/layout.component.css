@@ -12,3 +12,9 @@
   transition: margin-left .28s;
   position: relative;
 }
+.app-main{
+  min-height: calc(100vh - 50px);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}

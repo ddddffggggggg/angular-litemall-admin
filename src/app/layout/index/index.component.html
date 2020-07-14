@@ -1,0 +1,48 @@
+<div class="index-container">
+  <div nz-row [nzGutter]="16">
+    <div nz-col class="gutter-row" [nzSpan]="6">
+      <div class="card-panel">
+        <div class="icon">
+          <i class="icon-main" nz-icon nzType="user" nzTheme="outline"></i>
+        </div>
+        <div class="number">
+          <div class="number-text">用户数量</div>
+          <div class="num">{{userTotal}}</div>
+        </div>
+      </div>
+    </div>
+    <div nz-col class="gutter-row" [nzSpan]="6">
+      <div class="card-panel">
+        <div class="icon">
+          <i class="icon-main" nz-icon nzType="user" nzTheme="outline"></i>
+        </div>
+        <div class="number">
+          <div class="number-text">商品数量</div>
+          <div class="num">{{goodsTotal}}</div>
+        </div>
+      </div>
+    </div>
+    <div nz-col class="gutter-row" [nzSpan]="6">
+      <div class="card-panel">
+        <div class="icon">
+          <i class="icon-main" nz-icon nzType="user" nzTheme="outline"></i>
+        </div>
+        <div class="number">
+          <div class="number-text">货品数量</div>
+          <div class="num">{{productTotal}}</div>
+        </div>
+      </div>
+    </div>
+    <div nz-col class="gutter-row" [nzSpan]="6">
+      <div class="card-panel">
+        <div class="icon">
+          <i class="icon-main" nz-icon nzType="user" nzTheme="outline"></i>
+        </div>
+        <div class="number">
+          <div class="number-text">订单数量</div>
+          <div class="num">{{orderTotal}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

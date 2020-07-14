@@ -1,0 +1,34 @@
+.index-container{
+  padding: 32px;
+  background-color: #f0f2f5;
+}
+.card-panel{
+  height: 108px;
+  cursor: pointer;
+  font-size: 12px;
+  position: relative;
+  overflow: hidden;
+  color: #666;
+  background: #fff;
+  -webkit-box-shadow: 4px 4px 40px rgba(0,0,0,0.05);
+  box-shadow: 4px 4px 40px rgba(0,0,0,0.05);
+  border-color: rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+.card-panel .icon-main{
+  font-size: 24px;
+}
+.number{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.number .number-text{
+
+}
+.number .num{
+  text-align: center;
+}
