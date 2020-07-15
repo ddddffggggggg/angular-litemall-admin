@@ -14,7 +14,7 @@ export class IndexComponent implements OnInit {
   constructor(protected indexService: IndexService) { }
 
   ngOnInit(): void {
-    this.getData();
+    //this.getData();
   }
   getData() {
     this.indexService.getInfo();
